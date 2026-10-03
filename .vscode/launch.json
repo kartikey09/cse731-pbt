@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Day 1: generate code for all units",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/tools/day1_codegen.py",
+      "args": ["groq"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Day 2: one unit through the pipeline",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "args": ["--task", "HumanEval/26", "--name", "debug26"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

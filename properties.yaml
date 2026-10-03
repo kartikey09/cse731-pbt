@@ -1,0 +1,88 @@
+# The user-specified requirement, one entry per unit under test.
+#   inputs:     the valid input domain. Tests may only generate inputs from it.
+#   properties: plain-English statements that must hold for every valid input.
+
+- task_id: HumanEval/3          # below_zero
+  inputs: "operations: list of ints in [-1000, 1000], 0 to 30 items"
+  properties:
+    - "If no operation is negative, the result is False."
+    - "If the first operation is negative, the result is True."
+    - "If the result is True for a list, it stays True after appending any further operations."
+
+- task_id: HumanEval/12         # longest
+  inputs: "strings: list of str (each up to 8 characters), 0 to 10 items"
+  properties:
+    - "An empty list returns None."
+    - "For a non-empty list, the result is one of the strings and no string is longer than it."
+    - "For a non-empty list, every string that appears before the result is strictly shorter than it."
+
+- task_id: HumanEval/24         # largest_divisor
+  inputs: "n: int in [2, 10000]"
+  properties:
+    - "The result divides n exactly and is strictly smaller than n."
+    - "No integer strictly between the result and n divides n."
+
+- task_id: HumanEval/25         # factorize
+  inputs: "n: int in [2, 100000]"
+  properties:
+    - "The product of the returned factors equals n."
+    - "Every returned factor is a prime number."
+    - "The factors are in non-decreasing order."
+
+- task_id: HumanEval/26         # remove_duplicates
+  inputs: "numbers: list of ints in [-5, 5], 0 to 20 items (small range, so repeats are common)"
+  properties:
+    - "Every element of the result occurs exactly once in the input."
+    - "Every element that occurs exactly once in the input is in the result."
+    - "The result keeps the input order (it is a subsequence of the input)."
+
+- task_id: HumanEval/27         # flip_case
+  inputs: "string: any str"
+  properties:
+    - "Flipping twice gives back the original string."   # deliberately naive: see Day 3
+    - "The result has the same length as the input."     # deliberately naive: see Day 3
+    - "For ASCII text, lowercase letters become uppercase, uppercase become lowercase, other characters are unchanged."
+
+- task_id: HumanEval/47         # median
+  inputs: "l: list of ints in [-1000, 1000], 1 to 21 items"
+  properties:
+    - "Reordering l does not change the result."
+    - "The result lies between min(l) and max(l), inclusive."
+    - "Adding the same integer c (between -100 and 100) to every element shifts the result by exactly c."
+
+- task_id: HumanEval/48         # is_palindrome
+  inputs: "text: any str"
+  properties:
+    - "Any string followed by its own reverse is a palindrome."
+    - "A string and its reverse give the same result."
+    - "If the result is True, the string equals its reverse."
+
+- task_id: HumanEval/57         # monotonic
+  inputs: "l: list of ints in [-100, 100], 0 to 15 items"
+  properties:
+    - "A list sorted ascending or descending gives True."
+    - "A list and its reverse give the same result."
+    - "If some adjacent pair goes up and some adjacent pair goes down, the result is False."
+
+- task_id: HumanEval/58         # common
+  inputs: "l1, l2: lists of ints in [-20, 20], 0 to 15 items each"
+  properties:
+    - "The result is sorted ascending and has no duplicates."
+    - "Every element of the result appears in both l1 and l2."
+    - "Every value that appears in both l1 and l2 is in the result."
+    - "Swapping l1 and l2 does not change the result."
+
+- task_id: HumanEval/70         # strange_sort_list
+  inputs: "lst: list of ints in [-50, 50], 0 to 15 items"
+  properties:
+    - "The result is a rearrangement of the input (same elements, same counts)."
+    - "Elements at even positions (0, 2, 4, ...) are in non-decreasing order."
+    - "Elements at odd positions (1, 3, 5, ...) are in non-increasing order."
+    - "For a non-empty input, the first element of the result is min(lst)."
+
+- task_id: HumanEval/120        # maximum
+  inputs: "arr: list of ints in [-1000, 1000], 1 to 20 items; k: int with 0 <= k <= len(arr)"
+  properties:
+    - "The result has exactly k elements and is sorted ascending."
+    - "Every element of the result comes from arr (respecting how many times it occurs)."
+    - "After removing the result's elements from arr (one occurrence each), no remaining element is larger than min(result)."

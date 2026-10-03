@@ -1,0 +1,36 @@
+# Which LLM endpoint to use. All three speak the OpenAI chat-completions protocol.
+provider: groq                   # groq | openrouter | ollama   (override: --provider)
+
+providers:
+  groq:                          # free: 30 req/min, 1,000 req/day, 12K tokens/min, 100K tokens/day
+    base_url: https://api.groq.com/openai/v1
+    api_key_env: GROQ_API_KEY
+    model: qwen/qwen3.8-27b     # plain instruct model: no hidden reasoning
+    min_interval_s: 5            # ~12 calls a minute keeps a run under 12K tokens/minute
+    extra: {}
+  openrouter:                    # free: 20 req/min, 50 req/day without credits
+    base_url: https://openrouter.ai/api/v1
+    api_key_env: OPENROUTER_API_KEY
+    model: google/gemma-4-31b-it:free  # re-check with: python tools/free_models.py
+    min_interval_s: 3.5          # keeps us under 20 requests/minute
+    extra:
+      reasoning: {enabled: false}      # no hidden chain-of-thought (PDF rule)
+  ollama:                        # optional: local and unlimited, install only if both quotas run dry
+    base_url: http://localhost:11434/v1
+    api_key_env: null
+    model: qwen2.5-coder:7b
+    min_interval_s: 0
+    extra: {}
+
+agents:                          # sampling settings, reported verbatim (report item 2)
+  code_gen: {temperature: 0.2, top_p: 0.95, max_tokens: 1024, seed: 7}
+  test_gen: {temperature: 0.3, top_p: 0.95, max_tokens: 2048, seed: 7}
+
+pipeline:
+  dataset: data/HumanEval.jsonl.gz
+  properties_file: properties.yaml
+  coverage_threshold: 90         # branch coverage %, the adequacy bar
+  max_rounds: 3                  # test-generation rounds per problem; 1 disables feedback
+  hypothesis_max_examples: 200
+  hypothesis_seed: 0
+  exec_timeout_s: 60
