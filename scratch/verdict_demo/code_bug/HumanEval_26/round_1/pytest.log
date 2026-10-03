@@ -1,0 +1,27 @@
+F..                                                                      [100%]
+=================================== FAILURES ===================================
+_________________ test_p1_result_elements_occur_once_in_input __________________
+
+    @given(numbers)
+>   def test_p1_result_elements_occur_once_in_input(xs):
+                   ^^^
+
+test_solution.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+xs = [0, 0]
+
+    @given(numbers)
+    def test_p1_result_elements_occur_once_in_input(xs):
+        counts = Counter(xs)
+>       assert all(counts[x] == 1 for x in remove_duplicates(list(xs)))
+E       assert False
+E        +  where False = all(<generator object test_p1_result_elements_occur_once_in_input.<locals>.<genexpr> at 0x10afc6a80>)
+E       Failing test case: test_p1_result_elements_occur_once_in_input(
+E           xs=[0, 0],
+E       )
+
+test_solution.py:15: AssertionError
+=========================== short test summary info ============================
+FAILED test_solution.py::test_p1_result_elements_occur_once_in_input - assert...
+1 failed, 2 passed in 0.31s

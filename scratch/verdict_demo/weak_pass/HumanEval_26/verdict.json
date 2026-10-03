@@ -1,0 +1,146 @@
+{
+  "task_id": "HumanEval/26",
+  "entry_point": "remove_duplicates",
+  "verdict": "WEAK_PASS",
+  "rounds_used": 2,
+  "first_clean_round": 1,
+  "final_clean_round": 2,
+  "branch_pct_first": 25.0,
+  "branch_pct_final": 25.0,
+  "stop_reason": "no coverage gain; remaining branches may be infeasible",
+  "feedback_rejected_for_drift": false,
+  "properties": [
+    {
+      "id": "P1",
+      "text": "Every element of the result occurs exactly once in the input.",
+      "test": "test_p1_result_elements_occur_once_in_input",
+      "status": "HOLDS",
+      "counterexample": null,
+      "error": null
+    },
+    {
+      "id": "P2",
+      "text": "Every element that occurs exactly once in the input is in the result.",
+      "test": "test_p2_unique_inputs_are_kept",
+      "status": "HOLDS",
+      "counterexample": null,
+      "error": null
+    },
+    {
+      "id": "P3",
+      "text": "The result keeps the input order (it is a subsequence of the input).",
+      "test": "test_p3_order_preserved",
+      "status": "HOLDS",
+      "counterexample": null,
+      "error": null
+    }
+  ],
+  "triage_on_reference": {},
+  "humaneval_check_passed": true,
+  "rounds": [
+    {
+      "round": 1,
+      "status": "OK",
+      "branch_pct": 25.0,
+      "branches": "2/8",
+      "missing_branches": [
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "properties": [
+        {
+          "test": "test_p1_result_elements_occur_once_in_input",
+          "status": "HOLDS",
+          "counterexample": null,
+          "error": null
+        },
+        {
+          "test": "test_p2_unique_inputs_are_kept",
+          "status": "HOLDS",
+          "counterexample": null,
+          "error": null
+        },
+        {
+          "test": "test_p3_order_preserved",
+          "status": "HOLDS",
+          "counterexample": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "status": "OK",
+      "branch_pct": 25.0,
+      "branches": "2/8",
+      "missing_branches": [
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "properties": [
+        {
+          "test": "test_p1_result_elements_occur_once_in_input",
+          "status": "HOLDS",
+          "counterexample": null,
+          "error": null
+        },
+        {
+          "test": "test_p2_unique_inputs_are_kept",
+          "status": "HOLDS",
+          "counterexample": null,
+          "error": null
+        },
+        {
+          "test": "test_p3_order_preserved",
+          "status": "HOLDS",
+          "counterexample": null,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

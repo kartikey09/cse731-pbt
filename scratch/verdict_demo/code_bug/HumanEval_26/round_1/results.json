@@ -1,0 +1,20 @@
+{
+  "exitstatus": 1,
+  "tests": [
+    {
+      "test": "test_p1_result_elements_occur_once_in_input",
+      "outcome": "failed",
+      "detail": "@given(numbers)\n>   def test_p1_result_elements_occur_once_in_input(xs):\n                   ^^^\n\ntest_solution.py:13: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nxs = [0, 0]\n\n    @given(numbers)\n    def test_p1_result_elements_occur_once_in_input(xs):\n        counts = Counter(xs)\n>       assert all(counts[x] == 1 for x in remove_duplicates(list(xs)))\nE       assert False\nE        +  where False = all(<generator object test_p1_result_elements_occur_once_in_input.<locals>.<genexpr> at 0x10afc6a80>)\nE       Failing test case: test_p1_result_elements_occur_once_in_input(\nE           xs=[0, 0],\nE       )\n\ntest_solution.py:15: AssertionError"
+    },
+    {
+      "test": "test_p2_unique_inputs_are_kept",
+      "outcome": "passed",
+      "detail": ""
+    },
+    {
+      "test": "test_p3_order_preserved",
+      "outcome": "passed",
+      "detail": ""
+    }
+  ]
+}

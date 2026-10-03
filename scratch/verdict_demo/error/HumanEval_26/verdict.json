@@ -1,0 +1,60 @@
+{
+  "task_id": "HumanEval/26",
+  "entry_point": "remove_duplicates",
+  "verdict": "ERROR",
+  "rounds_used": 3,
+  "first_clean_round": null,
+  "final_clean_round": null,
+  "branch_pct_first": null,
+  "branch_pct_final": null,
+  "stop_reason": "tests still broken",
+  "feedback_rejected_for_drift": false,
+  "properties": [
+    {
+      "id": "P1",
+      "text": "Every element of the result occurs exactly once in the input.",
+      "test": null,
+      "status": "MISSING"
+    },
+    {
+      "id": "P2",
+      "text": "Every element that occurs exactly once in the input is in the result.",
+      "test": null,
+      "status": "MISSING"
+    },
+    {
+      "id": "P3",
+      "text": "The result keeps the input order (it is a subsequence of the input).",
+      "test": null,
+      "status": "MISSING"
+    }
+  ],
+  "triage_on_reference": {},
+  "humaneval_check_passed": true,
+  "rounds": [
+    {
+      "round": 1,
+      "status": "COLLECTION_ERROR",
+      "branch_pct": null,
+      "branches": "0/0",
+      "missing_branches": [],
+      "properties": []
+    },
+    {
+      "round": 2,
+      "status": "COLLECTION_ERROR",
+      "branch_pct": null,
+      "branches": "0/0",
+      "missing_branches": [],
+      "properties": []
+    },
+    {
+      "round": 3,
+      "status": "COLLECTION_ERROR",
+      "branch_pct": null,
+      "branches": "0/0",
+      "missing_branches": [],
+      "properties": []
+    }
+  ]
+}

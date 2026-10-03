@@ -1,0 +1,10 @@
+{
+  "exitstatus": 2,
+  "tests": [
+    {
+      "test": "<collection>",
+      "outcome": "error",
+      "detail": "../../../../../.venv/lib/python3.12/site-packages/_pytest/python.py:508: in importtestmodule\n    mod = import_path(\n../../../../../.venv/lib/python3.12/site-packages/_pytest/pathlib.py:596: in import_path\n    importlib.import_module(module_name)\n/Users/ranag/.local/share/uv/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n<frozen importlib._bootstrap>:1387: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1360: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../../../../.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:179: in exec_module\n    source_stat, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../../../../.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:348: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/Users/ranag/.local/share/uv/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/ast.py:52: in parse\n    return compile(source, filename, mode, flags,\nE     File \"/Users/ranag/cse731-pbt/scratch/verdict_demo/error/HumanEval_26/round_1/test_solution.py\", line 1\nE       def test_p1_broken(:\nE                          ^\nE   SyntaxError: invalid syntax"
+    }
+  ]
+}

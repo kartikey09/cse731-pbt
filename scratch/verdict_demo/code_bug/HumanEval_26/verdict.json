@@ -1,0 +1,71 @@
+{
+  "task_id": "HumanEval/26",
+  "entry_point": "remove_duplicates",
+  "verdict": "CODE_BUG",
+  "rounds_used": 1,
+  "first_clean_round": 1,
+  "final_clean_round": 1,
+  "branch_pct_first": 100.0,
+  "branch_pct_final": 100.0,
+  "stop_reason": "property falsified",
+  "feedback_rejected_for_drift": false,
+  "properties": [
+    {
+      "id": "P1",
+      "text": "Every element of the result occurs exactly once in the input.",
+      "test": "test_p1_result_elements_occur_once_in_input",
+      "status": "FALSIFIED",
+      "counterexample": "test_p1_result_elements_occur_once_in_input(xs=[0, 0])",
+      "error": "AssertionError at test_solution.py:15"
+    },
+    {
+      "id": "P2",
+      "text": "Every element that occurs exactly once in the input is in the result.",
+      "test": "test_p2_unique_inputs_are_kept",
+      "status": "HOLDS",
+      "counterexample": null,
+      "error": null
+    },
+    {
+      "id": "P3",
+      "text": "The result keeps the input order (it is a subsequence of the input).",
+      "test": "test_p3_order_preserved",
+      "status": "HOLDS",
+      "counterexample": null,
+      "error": null
+    }
+  ],
+  "triage_on_reference": {
+    "test_p1_result_elements_occur_once_in_input": "HOLDS"
+  },
+  "humaneval_check_passed": false,
+  "rounds": [
+    {
+      "round": 1,
+      "status": "OK",
+      "branch_pct": 100.0,
+      "branches": "0/0",
+      "missing_branches": [],
+      "properties": [
+        {
+          "test": "test_p1_result_elements_occur_once_in_input",
+          "status": "FALSIFIED",
+          "counterexample": "test_p1_result_elements_occur_once_in_input(xs=[0, 0])",
+          "error": "AssertionError at test_solution.py:15"
+        },
+        {
+          "test": "test_p2_unique_inputs_are_kept",
+          "status": "HOLDS",
+          "counterexample": null,
+          "error": null
+        },
+        {
+          "test": "test_p3_order_preserved",
+          "status": "HOLDS",
+          "counterexample": null,
+          "error": null
+        }
+      ]
+    }
+  ]
+}
